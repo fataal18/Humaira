@@ -7,12 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/asset/logo humaira.png"></link>
-    <title>Humaira Optik</title>
+    <link rel="icon" type="image/png" href="/asset/logo humaira.png">
     <style>
         :root {
             --primary-maroon: #ff7878;
             --pure-white: #FFFFFF;
+            --pure-black: #333333;
         }
 
         * {
@@ -63,8 +63,172 @@
             color: var(--primary-maroon) !important;
         }
 
+        /* Login Modal Styles */
+        .login-modal .modal-content {
+            border-radius: 15px;
+            border: none;
+        }
+
+        .login-header {
+            background: linear-gradient(135deg, var(--primary-maroon) 0%, #ff7878 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+        }
+
+        .login-body {
+            padding: 30px;
+        }
+
+        .login-form .form-control {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .login-form .form-control:focus {
+            border-color: var(--primary-maroon);
+            box-shadow: 0 0 0 0.2rem rgba(255, 120, 120, 0.25);
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, var(--primary-maroon) 0%, #ff7878 100%);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 120, 120, 0.3);
+        }
+
+        .login-footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .login-footer a {
+            color: var(--primary-maroon);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary-maroon);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        /* Cart Badge */
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #dc3545;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Dashboard Styles */
+        .dashboard-container {
+            padding: 20px;
+        }
+
+        .dashboard-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .dashboard-title {
+            color: var(--primary-maroon);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-maroon);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .order-item {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-cancelled {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        /* Existing Styles */
         .hero-section {
-            background: url('asset/vid.mp4') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1574258495973-f010dfbb5371?ixlib=rb-4.0.3') center/cover;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -346,26 +510,6 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.4);
         }
 
-        .filter-sidebar {
-            background: var(--pure-white);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-
-        .filter-title {
-            color: var(--primary-maroon);
-            font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .form-check-input:checked {
-            background-color: var(--primary-maroon);
-            border-color: var(--primary-maroon);
-        }
-
         .blog-card {
             background: var(--pure-white);
             border-radius: 12px;
@@ -453,6 +597,99 @@
 </head>
 <body>
 
+    <!-- Login Modal -->
+    <div class="modal fade login-modal" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="login-header">
+                    <h4 class="modal-title">Masuk ke Akun Anda</h4>
+                </div>
+                <div class="login-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="email@contoh.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Masukkan password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberCheck">
+                            <label class="form-check-label" for="rememberCheck">Ingat saya</label>
+                        </div>
+                        <button type="submit" class="login-btn">Masuk</button>
+                    </form>
+                </div>
+                <div class="login-footer">
+                    <p>Belum punya akun? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Daftar di sini</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade login-modal" id="registerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="login-header">
+                    <h4 class="modal-title">Daftar Akun Baru</h4>
+                </div>
+                <div class="login-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="nameInput" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="email@contoh.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Minimal 6 karakter" minlength="6" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Konfirmasi Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Ulangi password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">No. Telepon</label>
+                            <input type="tel" class="form-control" id="phoneInput" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                            <label class="form-check-label" for="termsCheck">
+                                Saya setuju dengan <a href="#">Syarat dan Ketentuan</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="login-btn">Daftar</button>
+                    </form>
+                </div>
+                <div class="login-footer">
+                    <p>Sudah punya akun? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Masuk di sini</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Modal -->
+    <div class="modal fade" id="dashboardModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(135deg, var(--primary-maroon) 0%, #ff7878 100%); color: white;">
+                    <h5 class="modal-title">Dashboard Pengguna</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body dashboard-container">
+                    <div id="dashboardContent">
+                        <!-- Content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
@@ -470,6 +707,25 @@
                     <li class="nav-item"><a class="nav-link" href="#artikel">Artikel</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                    
+                    <!-- User Menu -->
+                    <li class="nav-item dropdown" id="userMenuContainer">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i> Akun
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Masuk</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Daftar</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Cart Icon -->
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="#" onclick="showCart()">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge" id="cartBadge">0</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -496,7 +752,24 @@
         <div class="container">
             <h2 class="promo-title"><i class="fas fa-gift"></i> Promo Spesial Bulan Ini!</h2>
             <p class="fs-5">Diskon hingga 30% untuk frame pilihan + Gratis pemeriksaan mata</p>
-
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">15</span>
+                    <span class="countdown-label">Hari</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">10</span>
+                    <span class="countdown-label">Jam</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">30</span>
+                    <span class="countdown-label">Menit</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">45</span>
+                    <span class="countdown-label">Detik</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -529,38 +802,43 @@
             </div>
         </div>
     </section>
+
     <!-- Koleksi Produk -->
     <section id="koleksi" class="section" style="background: #f9f9f9;">
         <div class="container">
             <h2 class="section-title">Koleksi Terbaru Kami</h2>
             <div class="row">
-                <!-- Product Grid -->
-                <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-4">
-            <div class="product-card">
-                <img src="asset/frame 1.jpg" alt="Frame Fashion Wanita">
-                <h5 class="product-title">Christian Dior</h5>
-            </div> 
-        </div>
-
-        <div class="col-md-4">
-            <div class="product-card">
-                <img src="asset/frame 2.jpg" alt="Kacamata Pria">
-                <h5 class="product-title">Celine Paris</h5>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="product-card">
-                <img src="asset/frame 3.jpg" alt="Kacamata Anak">
-                <h5 class="product-title">Gentle Monster</h5>
-            </div>
-        </div>
-    </div>
-</div>
-                        
-                        </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <span class="category-badge">Frame Premium</span>
+                        <img src="asset/frame 1.jpg" alt="Christian Dior">
+                        <h5 class="product-title">Christian Dior</h5>
+                        <p class="product-price">Rp 2.450.000</p>
+                        <button class="btn btn-primary-custom w-100" onclick="addToCart('Christian Dior', 2450000)">
+                            <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <span class="category-badge">Frame Wanita</span>
+                        <img src="asset/frame 2.jpg" alt="Celine Paris">
+                        <h5 class="product-title">Celine Paris</h5>
+                        <p class="product-price">Rp 1.850.000</p>
+                        <button class="btn btn-primary-custom w-100" onclick="addToCart('Celine Paris', 1850000)">
+                            <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <span class="category-badge">Frame Unisex</span>
+                        <img src="asset/frame 3.jpg" alt="Gentle Monster">
+                        <h5 class="product-title">Gentle Monster</h5>
+                        <p class="product-price">Rp 1.950.000</p>
+                        <button class="btn btn-primary-custom w-100" onclick="addToCart('Gentle Monster', 1950000)">
+                            <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+                        </button>
                     </div>
                 </div>
             </div>
@@ -576,17 +854,20 @@
                     <img src="asset/lyn.png" alt="Pemeriksaan Mata" class="img-fluid rounded shadow">
                 </div>
                 <div class="col-lg-6">
-                    <h3 class="text-maroon mb-4" style="color: var(--pure-black);">Cek Kesehatan Mata Anda</h3>
+                    <h3 class="mb-4" style="color: var(--primary-maroon);">Cek Kesehatan Mata Anda</h3>
                     <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-check-circle text-maroon me-2" style="color: var(--pure-black);"></i> Pemeriksaan oleh optometris berpengalaman</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-maroon me-2" style="color: var(--pure-black);"></i> Teknologi peralatan modern</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-maroon me-2" style="color: var(--pure-black);"></i> Konsultasi gratis pemilihan lensa</li>
-                        <li class="mb-3"><i class="fas fa-check-circle text-maroon me-2" style="color: var(--pure-black);"></i> Harga pemeriksaan terjangkau</li>
+                        <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--primary-maroon);"></i> Pemeriksaan oleh optometris berpengalaman</li>
+                        <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--primary-maroon);"></i> Teknologi peralatan modern</li>
+                        <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--primary-maroon);"></i> Konsultasi gratis pemilihan lensa</li>
+                        <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--primary-maroon);"></i> Harga pemeriksaan terjangkau</li>
                     </ul>
                     <div class="mt-4">
-                        <h5 style="color: var(--pure-black);">Jadwal Layanan:</h5>
-                        <p class="mb-2"><i class=></i> Senin - Sabtu: 09:00 - 20:00 WIB</p>
-                        <p class="mb-4"><i class=></i> Minggu: 10:00 - 18:00 WIB</p>
+                        <h5>Jadwal Layanan:</h5>
+                        <p class="mb-2"><i class="far fa-clock me-2"></i> Senin - Sabtu: 09:00 - 20:00 WIB</p>
+                        <p class="mb-4"><i class="far fa-clock me-2"></i> Minggu: 10:00 - 18:00 WIB</p>
+                        <button class="btn btn-primary-custom" onclick="bookAppointment()">
+                            <i class="fas fa-calendar-check"></i> Buat Janji Temu
+                        </button>
                     </div>
                 </div>
             </div>
@@ -647,7 +928,7 @@
     <!-- Artikel dan Tips -->
     <section id="artikel" class="section">
         <div class="container">
-            <h2 class="section-title">Artikel & Tips Kesehatan Mata</h2>
+            <h2 class="section-title">Artikel dan Tips Kesehatan Mata</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="blog-card">
@@ -695,14 +976,14 @@
                     <img src="asset/tk.jpg" alt="Toko Humaira Optik" class="img-fluid rounded shadow">
                 </div>
                 <div class="col-lg-6">
-                    <h3 style="color: var(--pure-black);" class="mb-4">Brand Story Kami</h3>
+                    <h3 class="mb-4" style="color: var(--primary-maroon);">Brand Story Kami</h3>
                     <p class="mb-3">Humaira Optik hadir sebagai solusi terpercaya untuk kesehatan mata dan kenyamanan penglihatan seluruh keluarga Indonesia. Dengan pengalaman lebih dari 10 tahun, kami berkomitmen memberikan produk berkualitas dengan harga terjangkau.</p>
                     <div class="mb-4">
-                        <h5 style="color: var(--pure-black);"><i class=></i> Visi Kami</h5>
+                        <h5><i class="fas fa-eye me-2"></i> Visi Kami</h5>
                         <p>Menjadi optik terpercaya yang menghadirkan kejernihan penglihatan untuk semua kalangan.</p>
                     </div>
                     <div class="mb-4">
-                        <h5 style="color: var(--pure-black);"><i class=></i> Misi Kami</h5>
+                        <h5><i class="fas fa-bullseye me-2"></i> Misi Kami</h5>
                         <ul>
                             <li>Menyediakan produk optik berkualitas tinggi</li>
                             <li>Memberikan pelayanan profesional dan ramah</li>
@@ -746,30 +1027,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item mb-3 border-0 shadow-sm">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="color: var(--primary-maroon); font-weight: 600;">
-                                    Apa saja jenis lensa yang tersedia?
-                                </button>
-                            </h2>
-                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Kami menyediakan berbagai jenis lensa: lensa minus/plus, lensa antiradiasi, lensa blue ray, lensa photocromic, lensa progressive, dan softlens. Semua tersedia dalam berbagai merek berkualitas.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item mb-3 border-0 shadow-sm">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" style="color: var(--primary-maroon); font-weight: 600;">
-                                    Apakah ada garansi untuk produk?
-                                </button>
-                            </h2>
-                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Ya, semua produk kami dilengkapi dengan garansi 1 tahun untuk kerusakan manufaktur. Garansi mencakup frame dan lensa dengan syarat dan ketentuan berlaku.
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -788,29 +1045,21 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="contact-info">
-                        <h4 style="color: var(--pure-black);" class="mb-4">Informasi Kontak</h4>
+                        <h4 class="mb-4" style="color: var(--primary-maroon);">Informasi Kontak</h4>
                         <div class="mb-4">
-                            <h6><i class="fas fa-map-marker-alt text-maroon me-2" style="color: var(--pure-black);"></i> Alamat:</h6>
+                            <h6><i class="fas fa-map-marker-alt me-2" style="color: var(--primary-maroon);"></i> Alamat:</h6>
                             <p>Jl. Slamet Riyadi No. 123, Surakarta, Jawa Tengah 57111</p>
                         </div>
                         <div class="mb-4">
-                            <h6><i class="fas fa-phone text-maroon me-2" style="color: var(--pure-black);"></i> Telepon:</h6>
+                            <h6><i class="fas fa-phone me-2" style="color: var(--primary-maroon);"></i> Telepon:</h6>
                             <p>+62 271 123 4567</p>
                         </div>
                         <div class="mb-4">
-                            <h6><i class="fab fa-whatsapp text-maroon me-2" style="color: var(--pure-black);"></i> WhatsApp:</h6>
+                            <h6><i class="fab fa-whatsapp me-2" style="color: var(--primary-maroon);"></i> WhatsApp:</h6>
                             <p>+62 812 3456 7890</p>
                             <button class="btn btn-primary-custom mt-2" onclick="window.open('https://wa.me/6281234567890', '_blank')">
                                 <i class="fab fa-whatsapp me-2"></i> Chat Admin
                             </button>
-                        </div>
-                        <div class="mb-4">
-                            <h6><i style="color: var(--pure-black);"></i> Jam Operasional:</h6>
-                            <p class="mb-1">Senin - Sabtu: 09:00 - 20:00 WIB</p>
-                            <p>Minggu: 10:00 - 18:00 WIB</p>
-                        </div>
-                        <div class="social-links mt-4">
-                            
                         </div>
                     </div>
                 </div>
@@ -826,7 +1075,10 @@
                     <h5><i class="fas fa-glasses"></i> Humaira Optik</h5>
                     <p class="mt-3">Solusi terpercaya untuk kesehatan mata dan kenyamanan penglihatan seluruh keluarga Indonesia.</p>
                     <div class="social-links mt-3">
-                       
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -857,28 +1109,576 @@
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/6281234567890" target="_blank" class="whatsapp-float" title="Chat WhatsApp">
+    <a href="https://wa.me/6281234567890" target="_blank" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        // User Management System
+        class UserSystem {
+            constructor() {
+                this.currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
+                this.users = JSON.parse(localStorage.getItem('users')) || [
+                    {
+                        id: 1,
+                        name: "Admin",
+                        email: "admin@humaira.com",
+                        password: "admin123",
+                        phone: "081234567890",
+                        role: "admin",
+                        createdAt: new Date().toISOString()
+                    }
+                ];
+                this.cart = JSON.parse(localStorage.getItem('cart')) || [];
+                this.orders = JSON.parse(localStorage.getItem('orders')) || [];
+                this.appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+                
+                this.init();
             }
-        });
 
-        // Smooth scroll function
+            init() {
+                this.updateCartBadge();
+                this.updateUserMenu();
+                this.setupEventListeners();
+            }
+
+            setupEventListeners() {
+                // Login form
+                document.getElementById('loginForm')?.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.login();
+                });
+
+                // Register form
+                document.getElementById('registerForm')?.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.register();
+                });
+            }
+
+            login() {
+                const email = document.getElementById('emailInput').value;
+                const password = document.getElementById('passwordInput').value;
+                const rememberMe = document.getElementById('rememberCheck').checked;
+
+                const user = this.users.find(u => u.email === email && u.password === password);
+                
+                if (user) {
+                    this.currentUser = user;
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    
+                    if (rememberMe) {
+                        localStorage.setItem('rememberedEmail', email);
+                    }
+                    
+                    this.showAlert('success', 'Login berhasil!');
+                    this.updateUserMenu();
+                    
+                    // Close modal
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+                    modal.hide();
+                    
+                    // Reset form
+                    document.getElementById('loginForm').reset();
+                } else {
+                    this.showAlert('error', 'Email atau password salah!');
+                }
+            }
+
+            register() {
+                const name = document.getElementById('nameInput').value;
+                const email = document.getElementById('registerEmail').value;
+                const password = document.getElementById('registerPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                const phone = document.getElementById('phoneInput').value;
+
+                // Validation
+                if (password !== confirmPassword) {
+                    this.showAlert('error', 'Password tidak cocok!');
+                    return;
+                }
+
+                if (password.length < 6) {
+                    this.showAlert('error', 'Password minimal 6 karakter!');
+                    return;
+                }
+
+                // Check if user exists
+                if (this.users.find(u => u.email === email)) {
+                    this.showAlert('error', 'Email sudah terdaftar!');
+                    return;
+                }
+
+                // Create new user
+                const newUser = {
+                    id: Date.now(),
+                    name: name,
+                    email: email,
+                    password: password,
+                    phone: phone,
+                    role: 'customer',
+                    createdAt: new Date().toISOString()
+                };
+
+                this.users.push(newUser);
+                localStorage.setItem('users', JSON.stringify(this.users));
+                
+                this.currentUser = newUser;
+                localStorage.setItem('currentUser', JSON.stringify(newUser));
+                
+                this.showAlert('success', 'Registrasi berhasil!');
+                this.updateUserMenu();
+                
+                // Close modal
+                const modal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+                modal.hide();
+                
+                // Reset form
+                document.getElementById('registerForm').reset();
+            }
+
+            logout() {
+                this.currentUser = null;
+                localStorage.removeItem('currentUser');
+                this.updateUserMenu();
+                this.showAlert('success', 'Logout berhasil!');
+                
+                // Close dashboard if open
+                const dashboardModal = bootstrap.Modal.getInstance(document.getElementById('dashboardModal'));
+                if (dashboardModal) dashboardModal.hide();
+            }
+
+            updateUserMenu() {
+                const userMenuContainer = document.getElementById('userMenuContainer');
+                
+                if (this.currentUser) {
+                    const initials = this.currentUser.name.split(' ').map(n => n[0]).join('').toUpperCase();
+                    
+                    userMenuContainer.innerHTML = `
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <span class="user-avatar">${initials.substring(0, 2)}</span>
+                            ${this.currentUser.name.split(' ')[0]}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="userSystem.showDashboard()">
+                                <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" onclick="userSystem.showProfile()">
+                                <i class="fas fa-user me-2"></i> Profil
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" onclick="userSystem.showOrders()">
+                                <i class="fas fa-receipt me-2"></i> Pesanan Saya
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="userSystem.logout()">
+                                <i class="fas fa-sign-out-alt me-2"></i> Logout
+                            </a></li>
+                        </ul>
+                    `;
+                } else {
+                    userMenuContainer.innerHTML = `
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i> Akun
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <i class="fas fa-sign-in-alt me-2"></i> Masuk
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                <i class="fas fa-user-plus me-2"></i> Daftar
+                            </a></li>
+                        </ul>
+                    `;
+                }
+            }
+
+            showDashboard() {
+                if (!this.currentUser) {
+                    this.showAlert('error', 'Silakan login terlebih dahulu!');
+                    const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                    loginModal.show();
+                    return;
+                }
+
+                // Get user-specific data
+                const userOrders = this.orders.filter(order => order.userId === this.currentUser.id);
+                const userAppointments = this.appointments.filter(apt => apt.userId === this.currentUser.id);
+                const totalSpent = userOrders.reduce((sum, order) => sum + order.total, 0);
+
+                // Generate dashboard content
+                const dashboardContent = `
+                    <div class="dashboard-card">
+                        <h3 class="dashboard-title">Selamat datang, ${this.currentUser.name}!</h3>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">${this.cart.length}</div>
+                                <div class="stat-label">Item di Keranjang</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">${userOrders.length}</div>
+                                <div class="stat-label">Total Pesanan</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">${userAppointments.length}</div>
+                                <div class="stat-label">Janji Temu</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">Rp ${totalSpent.toLocaleString()}</div>
+                                <div class="stat-label">Total Belanja</div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Pesanan Terakhir</h5>
+                                ${userOrders.length > 0 ? 
+                                    userOrders.slice(-3).reverse().map(order => `
+                                        <div class="order-item">
+                                            <div class="d-flex justify-content-between">
+                                                <strong>Order #${order.id.toString().slice(-6)}</strong>
+                                                <span class="status-badge ${order.status === 'completed' ? 'status-success' : 'status-pending'}">
+                                                    ${order.status}
+                                                </span>
+                                            </div>
+                                            <small class="text-muted">${new Date(order.date).toLocaleDateString('id-ID')} - Rp ${order.total.toLocaleString()}</small>
+                                        </div>
+                                    `).join('') : 
+                                    '<p class="text-muted">Belum ada pesanan</p>'
+                                }
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Janji Temu Mendatang</h5>
+                                ${userAppointments.length > 0 ? 
+                                    userAppointments.filter(apt => new Date(apt.date) > new Date())
+                                        .slice(0, 3)
+                                        .map(apt => `
+                                            <div class="order-item">
+                                                <div class="d-flex justify-content-between">
+                                                    <strong>${apt.service}</strong>
+                                                    <span class="status-badge status-pending">${apt.status}</span>
+                                                </div>
+                                                <small class="text-muted">${new Date(apt.date).toLocaleDateString('id-ID')} - ${apt.time}</small>
+                                            </div>
+                                        `).join('') : 
+                                    '<p class="text-muted">Belum ada janji temu</p>'
+                                }
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <button class="btn btn-primary-custom me-2" onclick="userSystem.showProfile()">
+                                <i class="fas fa-user me-2"></i> Edit Profil
+                            </button>
+                            <button class="btn btn-primary-custom" onclick="userSystem.showCart()">
+                                <i class="fas fa-shopping-cart me-2"></i> Lihat Keranjang
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('dashboardContent').innerHTML = dashboardContent;
+                const dashboardModal = new bootstrap.Modal(document.getElementById('dashboardModal'));
+                dashboardModal.show();
+            }
+
+            showProfile() {
+                if (!this.currentUser) return;
+
+                const profileContent = `
+                    <div class="dashboard-card">
+                        <h3 class="dashboard-title">Profil Pengguna</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>Nama Lengkap:</strong><br>${this.currentUser.name}</p>
+                                <p><strong>Email:</strong><br>${this.currentUser.email}</p>
+                                <p><strong>Telepon:</strong><br>${this.currentUser.phone || '-'}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>Member sejak:</strong><br>${new Date(this.currentUser.createdAt).toLocaleDateString('id-ID')}</p>
+                                <p><strong>Role:</strong><br>${this.currentUser.role}</p>
+                                <p><strong>Status:</strong><br><span class="badge bg-success">Aktif</span></p>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <button class="btn btn-primary-custom" onclick="userSystem.editProfile()">
+                                <i class="fas fa-edit me-2"></i> Edit Profil
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('dashboardContent').innerHTML = profileContent;
+                const dashboardModal = new bootstrap.Modal(document.getElementById('dashboardModal'));
+                dashboardModal.show();
+            }
+
+            showOrders() {
+                if (!this.currentUser) return;
+
+                const userOrders = this.orders.filter(order => order.userId === this.currentUser.id);
+                
+                const ordersContent = `
+                    <div class="dashboard-card">
+                        <h3 class="dashboard-title">Riwayat Pesanan</h3>
+                        ${userOrders.length > 0 ? 
+                            userOrders.reverse().map(order => `
+                                <div class="order-item">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <strong>Order #${order.id.toString().slice(-6)}</strong><br>
+                                            <small class="text-muted">${new Date(order.date).toLocaleDateString('id-ID')}</small>
+                                        </div>
+                                        <div class="text-end">
+                                            <div class="status-badge ${order.status === 'completed' ? 'status-success' : order.status === 'cancelled' ? 'status-cancelled' : 'status-pending'}">
+                                                ${order.status}
+                                            </div>
+                                            <div><strong>Rp ${order.total.toLocaleString()}</strong></div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <small><strong>Items:</strong> ${order.items.map(item => `${item.name} (${item.quantity}x)`).join(', ')}</small>
+                                    </div>
+                                </div>
+                            `).join('') : 
+                            '<p class="text-center text-muted">Belum ada pesanan</p>'
+                        }
+                    </div>
+                `;
+
+                document.getElementById('dashboardContent').innerHTML = ordersContent;
+                const dashboardModal = new bootstrap.Modal(document.getElementById('dashboardModal'));
+                dashboardModal.show();
+            }
+
+            addToCart(productName, price) {
+                if (!this.currentUser) {
+                    this.showAlert('error', 'Silakan login terlebih dahulu untuk menambahkan ke keranjang!');
+                    const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                    loginModal.show();
+                    return;
+                }
+
+                const existingItem = this.cart.find(item => item.name === productName);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    this.cart.push({
+                        id: Date.now(),
+                        name: productName,
+                        price: price,
+                        quantity: 1,
+                        userId: this.currentUser.id,
+                        addedAt: new Date().toISOString()
+                    });
+                }
+
+                localStorage.setItem('cart', JSON.stringify(this.cart));
+                this.updateCartBadge();
+                this.showAlert('success', `${productName} berhasil ditambahkan ke keranjang!`);
+            }
+
+            showCart() {
+                if (!this.currentUser) {
+                    this.showAlert('error', 'Silakan login terlebih dahulu!');
+                    const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                    loginModal.show();
+                    return;
+                }
+
+                const userCart = this.cart.filter(item => item.userId === this.currentUser.id);
+                const total = userCart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+                let cartContent = '';
+                if (userCart.length === 0) {
+                    cartContent = '<p class="text-center text-muted">Keranjang belanja kosong</p>';
+                } else {
+                    cartContent = `
+                        <div class="dashboard-card">
+                            <h3 class="dashboard-title">Keranjang Belanja</h3>
+                            ${userCart.map(item => `
+                                <div class="order-item">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <strong>${item.name}</strong><br>
+                                            <small class="text-muted">Rp ${item.price.toLocaleString()} x ${item.quantity}</small>
+                                        </div>
+                                        <div class="text-end">
+                                            <div><strong>Rp ${(item.price * item.quantity).toLocaleString()}</strong></div>
+                                            <button class="btn btn-sm btn-danger mt-1" onclick="userSystem.removeFromCart(${item.id})">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                            
+                            <div class="mt-4 pt-3 border-top">
+                                <div class="d-flex justify-content-between">
+                                    <h5>Total:</h5>
+                                    <h5>Rp ${total.toLocaleString()}</h5>
+                                </div>
+                                <button class="btn btn-primary-custom w-100 mt-3" onclick="userSystem.checkout()">
+                                    <i class="fas fa-credit-card me-2"></i> Checkout
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                document.getElementById('dashboardContent').innerHTML = cartContent;
+                const dashboardModal = new bootstrap.Modal(document.getElementById('dashboardModal'));
+                dashboardModal.show();
+            }
+
+            removeFromCart(itemId) {
+                this.cart = this.cart.filter(item => item.id !== itemId);
+                localStorage.setItem('cart', JSON.stringify(this.cart));
+                this.updateCartBadge();
+                this.showCart();
+            }
+
+            checkout() {
+                if (!this.currentUser) return;
+
+                const userCart = this.cart.filter(item => item.userId === this.currentUser.id);
+                if (userCart.length === 0) {
+                    this.showAlert('error', 'Keranjang belanja kosong!');
+                    return;
+                }
+
+                const total = userCart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const order = {
+                    id: Date.now(),
+                    userId: this.currentUser.id,
+                    items: [...userCart],
+                    total: total,
+                    status: 'pending',
+                    date: new Date().toISOString(),
+                    shippingAddress: 'Belum diisi',
+                    paymentMethod: 'Belum dipilih'
+                };
+
+                this.orders.push(order);
+                localStorage.setItem('orders', JSON.stringify(this.orders));
+                
+                // Clear user's cart
+                this.cart = this.cart.filter(item => item.userId !== this.currentUser.id);
+                localStorage.setItem('cart', JSON.stringify(this.cart));
+                this.updateCartBadge();
+                
+                this.showAlert('success', `Checkout berhasil! Total: Rp ${total.toLocaleString()}`);
+                
+                // Close modal
+                const dashboardModal = bootstrap.Modal.getInstance(document.getElementById('dashboardModal'));
+                if (dashboardModal) dashboardModal.hide();
+                
+                // Show order confirmation
+                setTimeout(() => this.showOrders(), 500);
+            }
+
+            bookAppointment() {
+                if (!this.currentUser) {
+                    this.showAlert('error', 'Silakan login terlebih dahulu!');
+                    const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                    loginModal.show();
+                    return;
+                }
+
+                const appointment = {
+                    id: Date.now(),
+                    userId: this.currentUser.id,
+                    service: 'Pemeriksaan Mata',
+                    date: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 days from now
+                    time: '10:00',
+                    status: 'pending',
+                    notes: 'Pemeriksaan mata lengkap',
+                    createdAt: new Date().toISOString()
+                };
+
+                this.appointments.push(appointment);
+                localStorage.setItem('appointments', JSON.stringify(this.appointments));
+                
+                this.showAlert('success', 'Janji temu berhasil dibuat!');
+            }
+
+            updateCartBadge() {
+                if (!this.currentUser) {
+                    document.getElementById('cartBadge').textContent = '0';
+                    return;
+                }
+
+                const userCart = this.cart.filter(item => item.userId === this.currentUser.id);
+                const totalItems = userCart.reduce((sum, item) => sum + item.quantity, 0);
+                document.getElementById('cartBadge').textContent = totalItems;
+            }
+
+            showAlert(type, message) {
+                const alertClass = type === 'success' ? 'alert-success' : 'alert-danger';
+                const icon = type === 'success' ? '✓' : '✗';
+                
+                // Create alert element
+                const alertDiv = document.createElement('div');
+                alertDiv.className = `alert ${alertClass} alert-dismissible fade show position-fixed`;
+                alertDiv.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+                alertDiv.innerHTML = `
+                    <strong>${icon} ${type === 'success' ? 'Berhasil!' : 'Error!'}</strong> ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                
+                document.body.appendChild(alertDiv);
+                
+                // Auto remove after 3 seconds
+                setTimeout(() => {
+                    if (alertDiv.parentNode) {
+                        alertDiv.remove();
+                    }
+                }, 3000);
+            }
+
+            editProfile() {
+                // Simple profile editing
+                const newName = prompt('Masukkan nama baru:', this.currentUser.name);
+                if (newName && newName.trim() !== '') {
+                    this.currentUser.name = newName.trim();
+                    localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+                    
+                    // Update in users array
+                    const userIndex = this.users.findIndex(u => u.id === this.currentUser.id);
+                    if (userIndex !== -1) {
+                        this.users[userIndex].name = newName.trim();
+                        localStorage.setItem('users', JSON.stringify(this.users));
+                    }
+                    
+                    this.updateUserMenu();
+                    this.showAlert('success', 'Profil berhasil diperbarui!');
+                    this.showProfile();
+                }
+            }
+        }
+
+        // Initialize user system
+        const userSystem = new UserSystem();
+
+        // Existing functions
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
+        }
+
+        function bookAppointment() {
+            userSystem.bookAppointment();
+        }
+
+        function addToCart(productName, price) {
+            userSystem.addToCart(productName, price);
+        }
+
+        function showCart() {
+            userSystem.showCart();
         }
 
         // Countdown Timer
@@ -901,33 +1701,23 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
 
-        // Mobile menu close on link click
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse.classList.contains('show')) {
-                    navbarCollapse.classList.remove('show');
-                }
-            });
+        // Auto-fill remembered email
+        document.addEventListener('DOMContentLoaded', function() {
+            const rememberedEmail = localStorage.getItem('rememberedEmail');
+            if (rememberedEmail) {
+                document.getElementById('emailInput').value = rememberedEmail;
+                document.getElementById('rememberCheck').checked = true;
+            }
         });
     </script>
 </body>
